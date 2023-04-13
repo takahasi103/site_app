@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: 'homes#top'
+  get 'homes/about'
   #skip不要なルーティングを削除
   #顧客用
   devise_for :customers, skip: [:passwords], controllers:{
