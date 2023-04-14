@@ -1,5 +1,5 @@
 class Admin::ItemsController < ApplicationController
-  
+  before_action :set_genres, only: [:index, :new, :edit, :create,:update]
   def index
     @items = Item.all
   end
@@ -11,7 +11,7 @@ class Admin::ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     @item.save
-    redirect_to :index
+    redirect_to root_path
   end
   
   
@@ -19,5 +19,9 @@ class Admin::ItemsController < ApplicationController
   
   def item_params
     params.require(:item).permit(:genre_id, :name, :image, :introduction, :price, :is_active)
+  end 
+  
+  def set_genres
+    @genres = Genre.all
   end 
 end
