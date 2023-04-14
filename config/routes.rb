@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'genres/index'
-  get 'genres/edit'
-  get 'genres/create'
   root to: 'homes#top'
   get 'homes/about'
   #skip不要なルーティングを削除
@@ -14,5 +11,8 @@ Rails.application.routes.draw do
   devise_for :admin, skip: [:registrations, :passwords], controllers:{
     sessions: "admin/sessions"
   }
+  scope :admin do
+    resources :genres, only: [:index, :edit, :create]
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

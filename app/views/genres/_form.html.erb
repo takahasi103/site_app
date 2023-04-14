@@ -1,0 +1,9 @@
+<%= form_with model:genre, method: :post do |f| %>
+  <div class="form-group">
+    <%= f.label "ジャンル名" %>
+    <%= f.text_field :name, :placeholder => "ジャンル名", class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-success' %>
+  </div>
+<% end %>
