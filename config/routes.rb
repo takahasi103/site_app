@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'genres/index'
+  get 'genres/edit'
+  get 'genres/create'
   root to: 'homes#top'
   get 'homes/about'
   #skip不要なルーティングを削除
