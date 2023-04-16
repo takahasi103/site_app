@@ -7,6 +7,9 @@ Rails.application.routes.draw do
     registrations: "public/registrations",
     sessions: 'public/sessions'
   }
+  namespace :public do
+    resources :addresses, only: [:index, :edit, :create, :update, :show]
+  end 
   #管理者
   devise_for :admin, skip: [:registrations, :passwords], controllers:{
     sessions: "admin/sessions"

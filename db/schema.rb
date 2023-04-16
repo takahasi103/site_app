@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_15_113536) do
+ActiveRecord::Schema.define(version: 2023_04_16_014337) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.string "name"
+    t.string "address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_addresses_on_customer_id"
+  end
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -58,5 +67,6 @@ ActiveRecord::Schema.define(version: 2023_04_15_113536) do
     t.index ["genre_id"], name: "index_items_on_genre_id"
   end
 
+  add_foreign_key "addresses", "customers"
   add_foreign_key "items", "genres"
 end
