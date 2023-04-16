@@ -1,6 +1,6 @@
 <h1>配送先登録/一覧</h1>
-<%= form_with model: @address, url: public_addresses_path do %>
-  <!--%= f.hidden_field :customer_id, value: @customer.id %-->
+<%= form_with model: @address, url: public_addresses_path do |f| %>
+  <%= f.hidden_field :customer_id, value: @customer.id %>
   <div class="field">
     <%= f.label "宛名" %>
     <%= f.text_field :name, autofocus: true %>
