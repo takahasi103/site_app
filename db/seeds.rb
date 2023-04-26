@@ -7,13 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #管理者
 Admin.create!(
-  email: 'test1@com',
-  password: 'testtest'
-)
-
-Item.create!(
-  name: "サンプル",
-  genre_id: 1,
-  is_active: false,
-  image: File.open("./app/assets/images/shortcake.jpeg")
+  email: ENV['ADMIN_EMAIL'],
+  password: ENV['ADMIN_PASSWORD']
 )
