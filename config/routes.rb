@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     resources :items, only: [:index, :edit, :update, :create, :new, :show]
   end 
   scope :admin do
-    resources :genres, only: [:index, :edit, :create]
+    resources :genres, only: [:index, :edit, :create, :update]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

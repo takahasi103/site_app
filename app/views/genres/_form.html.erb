@@ -1,4 +1,4 @@
-<%= form_with model:genre, method: :post do |f| %>
+<%= form_with model:genre do |f| %>
   <div class="form-group">
     <%= f.label "ジャンル名" %>
     <%= f.text_field :name, :placeholder => "ジャンル名", class: 'form-control' %>
