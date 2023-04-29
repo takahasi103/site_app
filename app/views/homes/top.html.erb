@@ -1,2 +1,54 @@
 <h1>Homes#top</h1>
 <p>Find me in app/views/homes/top.html.erb</p>
+<canvas id="canvas" width="600" height="400"></canvas>
+
+<script src="script.js"></script>
+<script>
+  // Canvas要素を取得する
+var canvas = document.getElementById("canvas");
+
+// Canvasの2Dコンテキストを取得する
+var ctx = canvas.getContext("2d");
+
+// 四角形の初期座標を指定する
+var x = 50;
+var y = 50;
+
+// 四角形を描画する
+ctx.fillStyle = "blue";
+ctx.fillRect(x, y, 50, 50);
+// Canvas要素を取得する
+var canvas = document.getElementById("canvas");
+
+// Canvasの2Dコンテキストを取得する
+var ctx = canvas.getContext("2d");
+
+// 四角形の初期座標を指定する
+var x = 50;
+var y = 50;
+
+// 四角形を描画する
+ctx.fillStyle = "blue";
+ctx.fillRect(x, y, 50, 50);
+// イベントリスナーを追加する
+window.addEventListener("keydown", function(event) {
+	// 左矢印キーを押した場合
+	if (event.keyCode === 65 || event.keyCode === 37) {
+		// x座標を減算することで、左に移動する
+		x -= 10;
+	}
+	// 右矢印キーを押した場合
+	else if (event.keyCode === 68 || event.keyCode === 39) {
+		// x座標を加算することで、右に移動する
+		x += 10;
+	}
+
+	// Canvasをクリアする
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+	// 四角形を再描画する
+	ctx.fillStyle = "blue";
+	ctx.fillRect(x, y, 50, 50);
+});
+
+</script>

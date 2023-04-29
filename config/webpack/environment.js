@@ -11,3 +11,9 @@ environment.plugins.prepend(
     Popper: 'popper.js'
   })
 )
+
+const webpack = require('webpack')
+environment.plugins.append('Provide', new webpack.ProvidePlugin({
+  THREE: 'three'
+}))
+
